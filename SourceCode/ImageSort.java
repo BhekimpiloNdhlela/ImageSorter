@@ -37,7 +37,7 @@ public class ImageSort {
         break;
       default://This is the case when the GUI state is not equals to  0 or 1.
         System.out.println("Invalid Input, Check your Input.");
-        System.exit(0);//comment out for unit testing
+        System.exit(0);
         break;
     }
   }
@@ -60,7 +60,7 @@ public class ImageSort {
    * @param algorithmChoice  sorting algorithm of choice
    * @param sortColor        sorting color of choice
    * @param guiState         graphical user interface state
-   * @throws IOException	 Number Format and File Not Found exception
+   * @throws IOException	   Number Format and File Not Found exception
    */
   private static void triggerOffGuiState(String imagePath, int algorithmChoice, int sortColor, int guiState) throws IOException{
     SorterInitializer imageSortertInit = new SorterInitializer(imagePath, algorithmChoice, sortColor, guiState);
@@ -68,7 +68,7 @@ public class ImageSort {
     meanColorCalculator.imageColorMeanValues();
     SorterUnit proccessingUnit = new SorterUnit(meanColorCalculator);
     proccessingUnit.initiateImageSorter(algorithmChoice, sortColor);
-    System.exit(0); // comment out for unit testing
+    System.exit(0);
   }
 
   /**

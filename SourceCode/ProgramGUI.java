@@ -147,25 +147,16 @@ public class ProgramGUI extends javax.swing.JFrame {
     int detailsOfGuiSort[] = new int[2];
 
     //algorithms used for a new sort
-    if(insertionSortButton.isSelected()) {
-      detailsOfGuiSort[0] = 0;
-    } else if(shellSortRadioButton.isSelected()) {
-      detailsOfGuiSort[0] = 1;
-    } else if(mergeSortRadioButton.isSelected()) {
-      detailsOfGuiSort[0] = 2;
-    } else if(quickSortRadioButton.isSelected()) {
-      detailsOfGuiSort[0] = 3;
-    } else if(selectionSortRadioButton.isSelected()) {
-      detailsOfGuiSort[0] = 4;
-    }
+    if(insertionSortButton.isSelected())           { detailsOfGuiSort[0] = 0; }
+    else if(shellSortRadioButton.isSelected())     { detailsOfGuiSort[0] = 1; }
+    else if(mergeSortRadioButton.isSelected())     { detailsOfGuiSort[0] = 2; }
+    else if(quickSortRadioButton.isSelected())     { detailsOfGuiSort[0] = 3; }
+    else if(selectionSortRadioButton.isSelected()) { detailsOfGuiSort[0] = 4; }
     //colors used for new sort
-    if(redRadioButton.isSelected()) {
-      detailsOfGuiSort[1] = 0;
-    } else if(greenRadioButton.isSelected()) {
-      detailsOfGuiSort[1] = 1;
-    } else if(blueRadioButton.isSelected()) {
-      detailsOfGuiSort[1] = 2;
-    }guiNewSortTrigger(detailsOfGuiSort);
+    if(redRadioButton.isSelected())                { detailsOfGuiSort[1] = 0; }
+    else if(greenRadioButton.isSelected())         { detailsOfGuiSort[1] = 1; }
+    else if(blueRadioButton.isSelected())          {  detailsOfGuiSort[1] = 2; }
+    guiNewSortTrigger(detailsOfGuiSort);
   }
 
   /**
@@ -179,7 +170,7 @@ public class ProgramGUI extends javax.swing.JFrame {
   private void guiNewSortTrigger(int []detailsOfGuiSort) throws FileNotFoundException{
     firstButton.setEnabled(false);
     previousButton.setEnabled(false);
-    imageSorter = new SorterUnit(meanColorCalculator);
+    imageSorter  = new SorterUnit(meanColorCalculator);
     currentImage = 0;
     imageSorter.initiateImageSorter(detailsOfGuiSort[0], detailsOfGuiSort[1]);
     sortedImages = imageSorter.getSortedList();
@@ -197,8 +188,8 @@ public class ProgramGUI extends javax.swing.JFrame {
   private void displayImage(int currentlyShow){
     String showingImage = new String(sortedImages[currentlyShow]);
     imageSlideCanvas.setIcon(null);
-    ImageIcon icon = new ImageIcon(imageDirectory.concat((showingImage)));
-    Image image = icon.getImage().getScaledInstance(imageSlideCanvas.getWidth(),imageSlideCanvas.getHeight(), Image.SCALE_SMOOTH);
+    ImageIcon icon  = new ImageIcon(imageDirectory.concat((showingImage)));
+    Image image     = icon.getImage().getScaledInstance(imageSlideCanvas.getWidth(),imageSlideCanvas.getHeight(), Image.SCALE_SMOOTH);
     imageSlideCanvas.setIcon(new ImageIcon(image));
   }
 
@@ -212,18 +203,18 @@ public class ProgramGUI extends javax.swing.JFrame {
    */
   private void initialiseSorter() throws NumberFormatException, IOException{
     DataForTheGUI dataForGui = new DataForTheGUI();
-    imageDirectory = new String(dataForGui.getDataForGui()[0]);
-    int algorithimChoice = Integer.parseInt(dataForGui.getDataForGui()[1]);
-    int colorChoice = Integer.parseInt(dataForGui.getDataForGui()[2]);
-    int guiState = Integer.parseInt(dataForGui.getDataForGui()[3]);
+    imageDirectory           = new String(dataForGui.getDataForGui()[0]);
+    int algorithimChoice     = Integer.parseInt(dataForGui.getDataForGui()[1]);
+    int colorChoice          = Integer.parseInt(dataForGui.getDataForGui()[2]);
+    int guiState             = Integer.parseInt(dataForGui.getDataForGui()[3]);
 
-    imageSortertInit = new SorterInitializer(imageDirectory, algorithimChoice, colorChoice, guiState);
+    imageSortertInit    = new SorterInitializer(imageDirectory, algorithimChoice, colorChoice, guiState);
     meanColorCalculator = new CalculateMeanColor(imageSortertInit.getImageList(), imageSortertInit.getImageDirectory());
     meanColorCalculator.imageColorMeanValues();
     imageSorter = new SorterUnit(meanColorCalculator);
 
     imageSorter.initiateImageSorter(algorithimChoice, colorChoice);
-    sortedImages = imageSorter.getSortedList();
+    sortedImages   = imageSorter.getSortedList();
     numberOfImages = meanColorCalculator.getNumberOfImages();
     firstButton.setEnabled(false);
     previousButton.setEnabled(false);

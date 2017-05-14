@@ -23,11 +23,11 @@ public class SorterUnit {
    */
   public SorterUnit(CalculateMeanColor meanColorCalculator){
     this.meanColorCalculator = meanColorCalculator;
-    this.originalImageList = meanColorCalculator.getListOfImages();
-    this.numberOfImages = meanColorCalculator.getNumberOfImages();
-    this.meanColorRed = new Double[numberOfImages];
-    this.meanColorGreen = new Double[numberOfImages];
-    this.meanColorBlue = new Double[numberOfImages];
+    this.originalImageList   = meanColorCalculator.getListOfImages();
+    this.numberOfImages      = meanColorCalculator.getNumberOfImages();
+    this.meanColorRed        = new Double[numberOfImages];
+    this.meanColorGreen      = new Double[numberOfImages];
+    this.meanColorBlue       = new Double[numberOfImages];
     makeDefensiveCopy();
   }
 
@@ -37,7 +37,7 @@ public class SorterUnit {
    * @throws FileNotFoundException
    */
   private void insertionSort(Double[] colorToBeUsed) throws FileNotFoundException{
-    startingTime = System.currentTimeMillis();
+    startingTime    = System.currentTimeMillis();
     Insertion.sort(colorToBeUsed, sortingList);
     terminatingTime = System.currentTimeMillis();
     writeToTextFile(colorToBeUsed);
@@ -49,7 +49,7 @@ public class SorterUnit {
    * @throws FileNotFoundException
    */
   private void shellSort(Double[] colorToBeUsed) throws FileNotFoundException{
-    startingTime = System.currentTimeMillis();
+    startingTime    = System.currentTimeMillis();
     Shell.sort(colorToBeUsed, sortingList);
     terminatingTime = System.currentTimeMillis();
     writeToTextFile(colorToBeUsed);
@@ -61,7 +61,7 @@ public class SorterUnit {
    * @throws FileNotFoundException
    */
   private void mergeSort(Double[] colorToBeUsed) throws FileNotFoundException{
-    startingTime = System.currentTimeMillis();
+    startingTime    = System.currentTimeMillis();
     Merge.sort(colorToBeUsed, sortingList);
     terminatingTime = System.currentTimeMillis();
     writeToTextFile(colorToBeUsed);
@@ -73,7 +73,7 @@ public class SorterUnit {
    * @throws FileNotFoundException
    */
   private void quickSort(Double[] colorToBeUsed) throws FileNotFoundException{
-    startingTime = System.currentTimeMillis();
+    startingTime    = System.currentTimeMillis();
     Quick.sort(colorToBeUsed, sortingList);
     terminatingTime = System.currentTimeMillis();
     writeToTextFile(colorToBeUsed);
@@ -85,7 +85,7 @@ public class SorterUnit {
    * @throws FileNotFoundException
    */
   private void selectionSort(Double[] colorToBeUsed) throws FileNotFoundException{
-    startingTime = System.currentTimeMillis();
+    startingTime    = System.currentTimeMillis();
     Selection.sort(colorToBeUsed, sortingList);
     terminatingTime = System.currentTimeMillis();
     writeToTextFile(colorToBeUsed);
@@ -126,7 +126,7 @@ public class SorterUnit {
    * @throws FileNotFoundException
    */
   public void writeToTextFile(Double []colorToBeUsed) throws FileNotFoundException{
-    String outPutTextFile = new String("sorted.txt");
+    String outPutTextFile    = new String("sorted.txt");
     PrintWriter outPutStream = new PrintWriter(outPutTextFile);
     for(int i = 0; i < numberOfImages; i++){
       outPutStream.println(sortingList[i]);
@@ -139,16 +139,16 @@ public class SorterUnit {
    * with the original duplicate of the original array of the images and the color sorting components..
    */
   private void makeDefensiveCopy(){
-    this.sortingList = new String[numberOfImages];
-    Double meanRed[] = meanColorCalculator.getImageRedMeanComponent();
+    sortingList        = new String[numberOfImages];
+    Double meanRed[]   = meanColorCalculator.getImageRedMeanComponent();
     Double meanGreen[] = meanColorCalculator.getImageGreenMeanComponent();
-    Double meanBlue[] = meanColorCalculator.getImageBlueMeanComponent();
+    Double meanBlue[]  = meanColorCalculator.getImageBlueMeanComponent();
 
     for(int i = 0; i < numberOfImages; i++){
-      sortingList[i] = originalImageList[i];    //Defensive Copy for the image list
-      meanColorRed[i] = meanRed[i];             //Defensive Copy for the mean red color component
+      sortingList[i]    = originalImageList[i]; //Defensive Copy for the image list
+      meanColorRed[i]   = meanRed[i];           //Defensive Copy for the mean red color component
       meanColorGreen[i] = meanGreen[i];         //Defensive Copy for the mean green color component
-      meanColorBlue[i] = meanBlue[i];           //Defensive Copy for the mean blue color component
+      meanColorBlue[i]  = meanBlue[i];          //Defensive Copy for the mean blue color component
     }
   }
 

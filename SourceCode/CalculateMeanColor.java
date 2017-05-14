@@ -26,11 +26,11 @@ public class CalculateMeanColor {
    */
   public CalculateMeanColor(String[] imageList, String imageDirectory) throws IOException{
     this.imageDirectory = new String(imageDirectory);
-    this.imageList = imageList;
+    this.imageList      = imageList;
     this.numberOfImages = imageList.length;
-    this.meanColorRed = new Double[imageList.length];
+    this.meanColorRed   = new Double[imageList.length];
     this.meanColorGreen = new Double[imageList.length];
-    this.meanColorBlue = new Double[imageList.length];
+    this.meanColorBlue  = new Double[imageList.length];
   }
 
   /**
@@ -98,19 +98,19 @@ public class CalculateMeanColor {
    * @return  imageColorComponents
    */
   private double[] imageColorMeanValues(BufferedImage bufferedImage){
-    double redSigma = 0.0;
+    double redSigma   = 0.0;
     double greenSigma = 0.0;
-    double blueSigma = 0.0;
-    int pixelCounter = 0;
+    double blueSigma  = 0.0;
+    int pixelCounter  = 0;
     int heightOfImage = bufferedImage.getHeight();
-    int widthOfImage = bufferedImage.getWidth();
+    int widthOfImage  = bufferedImage.getWidth();
     int pixel;
     for(int i = 0; i < heightOfImage; i++){
       for(int j = 0; j < widthOfImage; j++){
         pixel = bufferedImage.getRGB(j, i);
-        redSigma += (pixel >> 16) & 0xff;
-        greenSigma += (pixel >> 8) & 0xff;
-        blueSigma += (pixel) & 0xff;
+        redSigma     += (pixel >> 16) & 0xff;
+        greenSigma   += (pixel >> 8) & 0xff;
+        blueSigma    += (pixel) & 0xff;
         pixelCounter += 1;
       }
     } return new double[]{ redSigma / pixelCounter, greenSigma / pixelCounter, blueSigma / pixelCounter};
@@ -125,9 +125,9 @@ public class CalculateMeanColor {
   public void imageColorMeanValues() throws IOException{
     for(int i = 0; i < numberOfImages; i++ ){
       double []colorMean = imageColorMeanValues(ImageIO.read(new File(imageDirectory.concat(imageList[i]))));
-      meanColorRed[i] = colorMean[0];
-      meanColorGreen[i] = colorMean[1];
-      meanColorBlue[i] = colorMean[2];
+      meanColorRed[i]    = colorMean[0];
+      meanColorGreen[i]  = colorMean[1];
+      meanColorBlue[i]   = colorMean[2];
     }
   }
 }

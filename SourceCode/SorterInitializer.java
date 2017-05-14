@@ -23,9 +23,9 @@ public class SorterInitializer {
   public SorterInitializer(String imageDirectory, int algorithmChoice, int meanColorUsed, int guiLauncher) throws IOException{
     this.imageDirectory = imageDirectory;
     this.algorithChoice = algorithmChoice;
-    this.meanColorUsed = meanColorUsed;
-    this.guiLauncher = guiLauncher;
-    this.isGuiOn = setGuiState();
+    this.meanColorUsed  = meanColorUsed;
+    this.guiLauncher    = guiLauncher;
+    this.isGuiOn        = setGuiState();
   }
 
   /**
@@ -35,8 +35,8 @@ public class SorterInitializer {
    */
   private void setImageList(){
     String path = new String(imageDirectory);
-    File file = new File(path);
-    this.imageList = file.list();
+    File file   = new File(path);
+    imageList   = file.list();
   }
 
   /**
