@@ -7,7 +7,7 @@
 *********************************************************************************************************************
 
 ## Graphical User Interface Example:
- ->![Alt text](example_image.jpg)<-
+ ![Alt text](example_image.jpg)
 
 ## Dependancies	:
 
