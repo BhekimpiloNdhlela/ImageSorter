@@ -6,6 +6,9 @@
 *********************************************************************************************************************
 *********************************************************************************************************************
 
+## Graphical User Interface Example:
+ ->![Alt text](example_image.jpg)<-
+
 ## Dependancies	:
 
 Image Soter depends on classes written by me(Bhekimpilo Ndhlela) which include:
