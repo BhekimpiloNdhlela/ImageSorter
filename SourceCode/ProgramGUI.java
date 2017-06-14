@@ -155,7 +155,7 @@ public class ProgramGUI extends javax.swing.JFrame {
     //colors used for new sort
     if(redRadioButton.isSelected())                { detailsOfGuiSort[1] = 0; }
     else if(greenRadioButton.isSelected())         { detailsOfGuiSort[1] = 1; }
-    else if(blueRadioButton.isSelected())          {  detailsOfGuiSort[1] = 2; }
+    else if(blueRadioButton.isSelected())          { detailsOfGuiSort[1] = 2; }
     guiNewSortTrigger(detailsOfGuiSort);
   }
 
