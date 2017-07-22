@@ -2,9 +2,10 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author Bhekimpilo Ndhlela @18998712
+ * @author Bhekimpilo Ndhlela
+ * @author 18998712
  * @versin 1.0
- * @since 2017-27-02
+ * @since  2017-27-02
  */
 public class SorterInitializer {
   private final String imageDirectory;
