@@ -1,7 +1,7 @@
-# README
+# ImageSorter
 *********************************************************************************************************************
 *********************************************************************************************************************
-### Author		      :Bhekimpilo Ndhlela
+### Author          :Bhekimpilo Ndhlela
 ### NAME OF PROJECT :IMAGESORTER
 *********************************************************************************************************************
 *********************************************************************************************************************
@@ -13,32 +13,30 @@
 
 Image Soter depends on classes written by me(Bhekimpilo Ndhlela) which include:
 
-       SorterUnit.java
+       * SorterUnit.java
 
-       ProgramGUI.java
+       * ProgramGUI.java
 
-       CalculateMeanColor.java
+       * CalculateMeanColor.java
 
-       ImageSort.java (main/client library)
+       * ImageSort.java (main/client library)
 
-       SorterInitializer.java
+       * SorterInitializer.java
 
-       AppTester.java (for coverage testing purposes)
+       * AppTester.java (for coverage testing purposes) [TODO]
 
 
-It also depends on the sorting algorithms libraries from Princeton University, I rewrote some of them and edited most of them these algorithms
+It also depends on the sorting algorithms libraries from Princeton University, I rewrote some of them and edited most of them these algorithms include:
 
-include:
+       * Shell.java
 
-       Shell.java
+       * Merge.java
 
-       Merge.java
+       * Insertion.java
 
-       Insertion.java
+       * Selection.java
 
-       Selection.java
-
-       Quick.java
+       * Quick.java
 
 
 ## How To Run	:
@@ -55,37 +53,37 @@ Ignore The Following notes and execute.
 
 The choice for algorithm to sort is args[1]
 
-      0 = Use Insertion sort to sort
+      * 0 = Use Insertion sort to sort
 
-      1 = Use Shell sort to sort
+      * 1 = Use Shell sort to sort
 
-      2 = Use Merge sort to sort
+      * 2 = Use Merge sort to sort
 
-      3 = Use Quick sort to sort
+      * 3 = Use Quick sort to sort
 
-      4 = Use Selection sort to sort
+      * 4 = Use Selection sort to sort
 
 ### Menu for Color Choice
 
 The choice for color to sort is args[2]
 
-      0 = use Red  to sort
+      * 0 = use Red  to sort
 
-      1 = use Green to sort
+      * 1 = use Green to sort
 
-      2 = use Blue to sort
+      * 2 = use Blue to sort
 
 
 ### Choice User Interface
 
 An integer indicating whether the GUI of the program should be launched args[3]
 
-      0 = use the OFF GUI state mode/ dont trigger the GUI
+      * 0 = use the OFF GUI state mode/ dont trigger the GUI
 
-      1 = use the ON GUI state mode/ do trigger the GUI
+      * 1 = use the ON GUI state mode/ do trigger the GUI
 
 
-##  Execution	: java ImageSort "Image Path" algorithmToUse colorToUse GUIstate
+##  Execution	: java ImageSort <Image Path> <algorithmToUse> <colorToUse when sorting> <GUIstate>
 
       For Example: java ImageSort images 3 1 0
 
